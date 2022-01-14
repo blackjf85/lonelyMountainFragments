@@ -12,7 +12,7 @@ import com.example.lonelymountainfragments.databinding.FragmentNameBinding
 class NameFragment: Fragment() {
 
     private var _binding: FragmentNameBinding? = null
-    private val binding: FragmentNameBinding get() = binding!!
+    private val binding: FragmentNameBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,18 +27,20 @@ class NameFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             firstNameEt.editText?.addTextChangedListener { text ->
-                nextBtn.isEnabled = text.toString().length > 8
+                nextBtn.isEnabled = text.toString().length > 1
             }
 
             nextBtn.setOnClickListener {
                 val bundle = Bundle()
-                bundle.putString(FIRST_EXTRA, firstNameEt.editText?.text.toString())
-                bundle.putString(LAST_EXTRA, lastNameEt.editText?.text.toString())
+                bundle.putString("First", firstNameEt.editText?.text.toString())
+                bundle.putString("Last", lastNameEt.editText?.text.toString())
 
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container_view, EmailFragment::class.java, bundle)
                     .addToBackStack(null)
                     .commit()
+
+
             }
         }
     }

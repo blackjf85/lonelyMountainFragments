@@ -9,8 +9,6 @@ import com.example.lonelymountainfragments.databinding.FragmentInfoBinding
 
 class InfoFragment: Fragment() {
 
-    class InfoFragment: Fragment() {
-
         private var _binding: FragmentInfoBinding? = null
         private val binding: FragmentInfoBinding get() = _binding!!
 
@@ -18,18 +16,19 @@ class InfoFragment: Fragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-        ): View? {
+        ): View {
             _binding = FragmentInfoBinding.inflate(inflater, container, false)
             return binding.root
         }
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
+
             with(binding) {
-                firstNameTv.text = arguments?.getString(FIRST_EXTRA) ?: "First"
-                lastNameTv.text = arguments?.getString(LAST_EXTRA) ?: "Last"
-                emailTv.text = arguments?.getString(EMAIL_EXTRA) ?: "Email"
-                passwordTv.text = arguments?.getString(PASSWORD_EXTRA) ?: "Password"
+                firstNameTv.text = arguments?.getString("First") ?: "First"
+                lastNameTv.text = arguments?.getString("Last") ?: "Last"
+                emailTv.text = arguments?.getString("Email") ?: "Email"
+                passwordTv.text = arguments?.getString("Password") ?: "Password"
             }
         }
 
@@ -39,4 +38,3 @@ class InfoFragment: Fragment() {
         }
 
     }
-}
