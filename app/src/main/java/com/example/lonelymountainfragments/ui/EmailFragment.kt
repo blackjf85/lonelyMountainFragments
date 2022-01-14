@@ -33,7 +33,7 @@ class EmailFragment: Fragment() {
             nextBtn.setOnClickListener {
 
                 val bundle = Bundle()
-                bundle.putString("Email", emailEt.editText?.text.toString())
+                bundle.putString(EMAIL_EXTRA, emailEt.editText?.text.toString())
 
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container_view, PasswordFragment::class.java, bundle)

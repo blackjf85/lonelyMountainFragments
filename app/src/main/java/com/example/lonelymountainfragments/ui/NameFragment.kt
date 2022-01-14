@@ -31,13 +31,10 @@ class NameFragment: Fragment() {
             }
 
             nextBtn.setOnClickListener {
-                // Create bundle to pass data in fragment transaction.
                 val bundle = Bundle()
-                bundle.putString("First", firstNameEt.editText?.text.toString())
-                bundle.putString("Last", lastNameEt.editText?.text.toString())
+                bundle.putString(FIRST_EXTRA, firstNameEt.editText?.text.toString())
+                bundle.putString(LAST_EXTRA, lastNameEt.editText?.text.toString())
 
-                // FragmentManger allows us to perform transaction.
-                // Use replace to switch between fragments.
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container_view, EmailFragment::class.java, bundle)
                     .addToBackStack(null)

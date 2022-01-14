@@ -26,11 +26,10 @@ class InfoFragment: Fragment() {
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
             with(binding) {
-                // Data in fragment manager is arguments instead of intent.
-                firstNameTv.text = arguments?.getString("First") ?: "First"
-                lastNameTv.text = arguments?.getString("Last") ?: "Last"
-                emailTv.text = arguments?.getString("Email") ?: "Email"
-                passwordTv.text = arguments?.getString("Password") ?: "Password"
+                firstNameTv.text = arguments?.getString(FIRST_EXTRA) ?: "First"
+                lastNameTv.text = arguments?.getString(LAST_EXTRA) ?: "Last"
+                emailTv.text = arguments?.getString(EMAIL_EXTRA) ?: "Email"
+                passwordTv.text = arguments?.getString(PASSWORD_EXTRA) ?: "Password"
             }
         }
 

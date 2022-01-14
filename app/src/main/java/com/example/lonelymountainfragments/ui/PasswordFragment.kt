@@ -33,7 +33,7 @@ class PasswordFragment: Fragment() {
             nextBtn.setOnClickListener {
 
                 val bundle = Bundle()
-                bundle.putString("Password", passwordEt.editText?.text.toString())
+                bundle.putString(PASSWORD_EXTRA, passwordEt.editText?.text.toString())
 
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container_view, InfoFragment::class.java, bundle)
