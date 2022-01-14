@@ -33,16 +33,16 @@ class EmailFragment: Fragment() {
             emailEt.editText?.addTextChangedListener { text ->
                 nextBtn.isEnabled = text.toString().length > 1
 
-                firstName = arguments?.getString("First") ?: "First"
-                lastName = arguments?.getString("Last") ?: "Last"
+                firstName = arguments?.getString(FIRST) ?: "First"
+                lastName = arguments?.getString(LAST) ?: "Last"
             }
 
             nextBtn.setOnClickListener {
                 val bundle = Bundle()
 
-                bundle.putString("First", firstName)
-                bundle.putString("Last", lastName)
-                bundle.putString("Email", emailEt.editText?.text.toString())
+                bundle.putString(FIRST, firstName)
+                bundle.putString(LAST, lastName)
+                bundle.putString(EMAIL, emailEt.editText?.text.toString())
 
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container_view, PasswordFragment::class.java, bundle)

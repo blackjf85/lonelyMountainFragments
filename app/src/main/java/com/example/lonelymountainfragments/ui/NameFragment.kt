@@ -32,8 +32,8 @@ class NameFragment: Fragment() {
 
             nextBtn.setOnClickListener {
                 val bundle = Bundle()
-                bundle.putString("First", firstNameEt.editText?.text.toString())
-                bundle.putString("Last", lastNameEt.editText?.text.toString())
+                bundle.putString(FIRST, firstNameEt.editText?.text.toString())
+                bundle.putString(LAST, lastNameEt.editText?.text.toString())
 
                 parentFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container_view, EmailFragment::class.java, bundle)

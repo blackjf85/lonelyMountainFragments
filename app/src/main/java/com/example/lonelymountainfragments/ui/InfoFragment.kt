@@ -25,10 +25,10 @@ class InfoFragment: Fragment() {
             super.onViewCreated(view, savedInstanceState)
 
             with(binding) {
-                firstNameTv.text = arguments?.getString("First") ?: "First"
-                lastNameTv.text = arguments?.getString("Last") ?: "Last"
-                emailTv.text = arguments?.getString("Email") ?: "Email"
-                passwordTv.text = arguments?.getString("Password") ?: "Password"
+                firstNameTv.text = arguments?.getString(FIRST) ?: "First"
+                lastNameTv.text = arguments?.getString(LAST) ?: "Last"
+                emailTv.text = arguments?.getString(EMAIL) ?: "Email"
+                passwordTv.text = arguments?.getString(PASSWORD) ?: "Password"
             }
         }
 
